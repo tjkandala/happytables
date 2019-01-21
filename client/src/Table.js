@@ -14,7 +14,7 @@ class Table extends Component {
     super();
 
     this.state = {
-      endpoint: "http://localhost:3001/",
+      endpoint: "https://happytables.herokuapp.com/",
       nickname: "",
       category: "",
       location: "",
