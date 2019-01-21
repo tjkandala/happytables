@@ -7,7 +7,7 @@ class Home extends Component {
     super();
 
     this.state = {
-      endpoint: "http://127.0.0.1:3001",
+      endpoint: "http://localhost:3001/",
       tableid: null
     };
   }
