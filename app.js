@@ -89,8 +89,13 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/tables", table);
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // localhost port
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
